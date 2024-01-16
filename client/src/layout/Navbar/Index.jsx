@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
 import "./index.scss";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { WishlistContext } from "../../context/WishlistContext";
+
 const Navbar = () => {
   const [scroll, setScroll] = useState(false);
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const { wishlist, addToWishlist, basket } = useContext(WishlistContext);
   const nav = () => {
     const wScroll = window.scrollY;
     wScroll > 50 ? setScroll(true) : setScroll(false);
@@ -35,7 +38,12 @@ const Navbar = () => {
               </li>
               <li>
                 <Link className="link" to="/wishlist">
-                Wishlist
+                Wishlist{`(${wishlist.length > 0 ? wishlist.length  :""})`}
+                </Link>
+              </li>
+              <li>
+                <Link className="link" to="/basket">
+                Basket{`(${basket.length > 0 ? basket.length  :""})`}
                 </Link>
               </li>
               <li>
@@ -70,6 +78,16 @@ const Navbar = () => {
               <li>
                 <Link className="link" to="/">
                   Home
+                </Link>
+              </li>
+              <li>
+                <Link className="link" to="/wishlist">
+                Wishlist{`(${wishlist.length > 0 ? wishlist.length  :""})`}
+                </Link>
+              </li>
+              <li>
+                <Link className="link" to="/basket">
+                Basket{`(${basket.length > 0 ? basket.reduce((acc,cur)=>acc+cur.count,0)  :""})`}
                 </Link>
               </li>
               <li>

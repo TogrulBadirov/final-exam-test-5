@@ -7,6 +7,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import Wishlist from "./pages/Wishlist";
 import DetailPage from "./pages/DetailPage";
+import Basket from "./pages/Basket";
+import toast, { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="/addPage" element={<AddPage />} />
             <Route path="/wishlist" element={<Wishlist />} />
+            <Route path="/basket" element={<Basket />} />
             <Route path="/detail-page/:id" element={<DetailPage />} />
             {/* <Route path="contact" element={<Contact />} /> */}
             {/* <Route path="*" element={<NoPage />} /> */}

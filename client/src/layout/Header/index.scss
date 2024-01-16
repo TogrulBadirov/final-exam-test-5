@@ -1,0 +1,61 @@
+header{
+    height: 100vh;
+    width: 100%;
+    background-image: url("https://preview.colorlib.com/theme/educature/img/header-bg.png.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .container{
+        text-align: center;
+        max-width: 500px;
+        color: #fff;
+        .input-div{
+            max-width: 500px;
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            .header-input{
+                font-size: 20px;
+                padding: 10px;
+                width: 100%;
+                outline: none;
+                border: none;
+            }
+            button{
+                background-color: #39cfca ;
+                color: #fff;
+                width: max-content;
+                height: max-content;
+                padding: 10px 20px;
+                outline: none;
+                border: none;
+                margin: 0 5px;
+                transition: 200ms ease;
+                &:hover{
+                    background-color: #3279bb;
+                }
+            }
+        }
+        
+    }
+    .rocket-image{
+        position: absolute;
+        bottom: 0;
+        &.active{
+            animation-name: rocket;
+            animation-duration: 4000ms;
+        }
+    }
+}
+
+@keyframes rocket {
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(-100vh);
+    }
+}

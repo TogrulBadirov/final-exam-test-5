@@ -1,0 +1,49 @@
+#card{
+    width: 350px;
+    
+    background-color: #f1f9ff;
+    border: none;
+    padding: 40px;
+    .link{
+        color: initial;
+        text-decoration: none;
+    }
+    .icon{
+        font-size: 38px;
+        
+    }
+    h5{
+        margin: 20px 0;
+    }
+    p{
+        color: #777;
+    }
+    
+    .buttons{
+        .basket-btn{
+            width: max-content;
+            background-color: transparent;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            transition: 300ms ease;
+            font-size: 18px;
+            border: 1px solid #777;
+            margin-right: 10px;
+            &:hover{
+                transform: scale(1.05);
+            }
+            &:active{
+                transform: scale(0.9);
+            }
+    
+        }
+    }
+}
+@media screen and (max-width:992px) {
+
+            #card{
+                width: 250px;
+            }
+}

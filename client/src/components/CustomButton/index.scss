@@ -1,0 +1,14 @@
+.custom-button{
+    background-color: #39cfca ;
+    color: #fff;
+    width: max-content;
+    height: max-content;
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    margin: 0 5px;
+    transition: 200ms ease;
+    &:hover{
+        background-color: #3279bb;
+    }
+}

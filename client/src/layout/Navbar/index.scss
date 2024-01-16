@@ -1,0 +1,108 @@
+nav{
+    width: 100%;
+    background-color: #35afc3;
+    position: absolute;
+    z-index: 10;
+    &.active{
+        position: fixed;
+        animation-name: slide-nav;
+        animation-duration: 500ms;
+        background-color: #00000075;
+    }
+}
+
+#desktop-nav{
+    position: relative;
+    .container{
+        display: flex;
+        align-items: center;
+    justify-content: space-between;
+    .pages{
+        ul{
+            padding: 0;
+            margin: 0;
+            display: flex;
+            list-style: none;
+            li{
+                padding: 20px 10px;
+                transition: 200ms ease;
+                &:hover{
+                    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                }
+                .link{
+                    text-decoration: none;
+                    color: #fff;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    }
+  
+}
+#mobile-nav{
+    display: none;
+    .container{
+        align-items: center;
+    justify-content: space-between;
+    .top-nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        .burger-icon{
+            button{
+                color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            }
+        }
+    }
+    .pages{
+        height: 0;
+        transition: height 300ms ease;
+        overflow: hidden;
+        
+        &.active{
+            height: 150px;
+        }
+        ul{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            li{
+                padding: 10px 10px;
+                transition: 200ms ease;
+                &:hover .link{
+                    color: #777;
+                }
+                .link{
+                    text-decoration: none;
+                    color: #fff;
+                    font-size: 16px;
+                    transition: 200ms ease;
+                }
+            }
+        }
+    }
+    }
+}
+@media screen and (max-width:992px) {
+    #desktop-nav{
+    display: none;
+}   
+#mobile-nav{
+    display: block;
+}
+}
+
+@keyframes slide-nav {
+    from{
+        transform: translateY(-100px);
+    }
+    to{
+        transform: translateY(0px);
+    }
+}
